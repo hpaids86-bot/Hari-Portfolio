@@ -1,300 +1,208 @@
-# resolve <sup>[![Version Badge][2]][1]</sup>
+# 🚀 HARIPRASATH R – Personal Portfolio
 
-implements the [node `require.resolve()` algorithm](https://nodejs.org/api/modules.html#modules_all_together) such that you can `require.resolve()` on behalf of a file asynchronously and synchronously
+> **Aspiring Cloud Engineer | Full Stack Developer | AI & Data Science Undergraduate**
 
-[![github actions][actions-image]][actions-url]
-[![coverage][codecov-image]][codecov-url]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/10759/badge)](https://bestpractices.coreinfrastructure.org/projects/10759)
+Welcome to my personal portfolio website! This portfolio showcases my technical skills, projects, internships, certifications, achievements, and professional journey as I work toward becoming a Cloud Engineer and Full Stack Developer.
 
-[![npm badge][11]][1]
+🌐 **Live Portfolio:** https://hari-portfolio-9g4deopck-hari-prasath-r.vercel.app
 
-# example
+---
 
-asynchronously resolve:
+## 📖 About
 
-```js
-var resolve = require('resolve/async'); // or, require('resolve')
-resolve('tap', { basedir: __dirname }, function (err, res) {
-    if (err) console.error(err);
-    else console.log(res);
-});
-```
+This portfolio is designed to provide recruiters, hiring managers, and fellow developers with a comprehensive overview of my experience, technical expertise, and career aspirations.
 
-```
-$ node example/async.js
-/home/substack/projects/node-resolve/node_modules/tap/lib/main.js
-```
+The website follows a modern, premium design inspired by enterprise products while maintaining excellent performance, responsiveness, and accessibility.
 
-synchronously resolve:
+---
 
-```js
-var resolve = require('resolve/sync'); // or, `require('resolve').sync
-var res = resolve('tap', { basedir: __dirname });
-console.log(res);
-```
+## ✨ Features
 
-```
-$ node example/sync.js
-/home/substack/projects/node-resolve/node_modules/tap/lib/main.js
-```
+* 🏠 Premium Landing Page
+* 👨‍💻 Professional About Me Section
+* 🎓 Interactive Education Timeline
+* 💡 Technical Skills Showcase
+* 💼 Professional Experience Timeline
+* 🚀 Featured Projects
+* 🏆 Professional Certifications
+* 🥇 Achievements & Leadership
+* 📊 GitHub Developer Dashboard
+* ⚡ Interactive Technology Stack
+* 📄 Resume View & Download
+* 📬 Contact Form & Social Links
+* 📱 Fully Responsive Design
+* 🎨 Smooth Animations & Modern UI
 
-# methods
+---
 
-```js
-var resolve = require('resolve');
-var async = require('resolve/async');
-var sync = require('resolve/sync');
-```
+## 🛠️ Tech Stack
 
-For both the synchronous and asynchronous methods, errors may have any of the following `err.code` values:
+### Frontend
 
-- `MODULE_NOT_FOUND`: the given path string (`id`) could not be resolved to a module
-- `INVALID_BASEDIR`: the specified `opts.basedir` doesn't exist, or is not a directory
-- `INVALID_PACKAGE_MAIN`: a `package.json` was encountered with an invalid `main` property (eg. not a string)
+* React
+* TypeScript
+* Tailwind CSS
+* Framer Motion
 
-## resolve(id, opts={}, cb)
+### Backend
 
-Asynchronously resolve the module path string `id` into `cb(err, res [, pkg])`, where `pkg` (if defined) is the data from `package.json`.
+* FastAPI
+* Python
 
-options are:
+### Database
 
-* opts.basedir - directory to begin resolving from
+* PostgreSQL
+* MySQL
 
-* opts.package - `package.json` data applicable to the module being loaded
+### Cloud
 
-* opts.extensions - array of file extensions to search in order
+* AWS (Learning)
+* Cloud Computing
+* Virtualization
 
-* opts.includeCoreModules - set to `false` to exclude node core modules (e.g. `fs`) from the search
+### Development Tools
 
-* opts.readFile - how to read files asynchronously
+* Git
+* GitHub
+* VS Code
+* Postman
+* Figma
 
-* opts.isFile - function to asynchronously test whether a file exists
+---
 
-* opts.isDirectory - function to asynchronously test whether a file exists and is a directory
+## 🚀 Featured Projects
 
-* opts.realpath - function to asynchronously resolve a potential symlink to its real path
+### 📚 EduPath AI Analyzer
 
-* `opts.readPackage(readFile, pkgfile, cb)` - function to asynchronously read and parse a package.json file
-  * readFile - the passed `opts.readFile` or `fs.readFile` if not specified
-  * pkgfile - path to package.json
-  * cb - callback
+An AI-powered educational platform that analyzes previous years' question papers using Natural Language Processing (NLP) to identify important topics, helping students prepare smarter for semester examinations.
 
-* `opts.packageFilter(pkg, pkgfile, dir)` - transform the parsed package.json contents before looking at the "main" field
-  * pkg - package data
-  * pkgfile - path to package.json
-  * dir - directory that contains package.json
+**Highlights**
 
-* `opts.pathFilter(pkg, path, relativePath)` - transform a path within a package
-  * pkg - package data
-  * path - the path being resolved
-  * relativePath - the path relative from the package.json location
-  * returns - a relative path that will be joined from the package.json location
+* AI Topic Ranking
+* Question Paper Analysis
+* Semester Planner
+* Study Dashboard
+* Progress Tracking
 
-* opts.paths - require.paths array to use if nothing is found on the normal `node_modules` recursive walk (probably don't use this)
+---
 
-  For advanced users, `paths` can also be a `opts.paths(request, start, opts)` function
-    * request - the import specifier being resolved
-    * start - lookup path
-    * getNodeModulesDirs - a thunk (no-argument function) that returns the paths using standard `node_modules` resolution
-    * opts - the resolution options
+### 🌱 Eco-Tree Impact Analyzer
 
-* `opts.packageIterator(request, start, opts)` - return the list of candidate paths where the packages sources may be found (probably don't use this)
-    * request - the import specifier being resolved
-    * start - lookup path
-    * getPackageCandidates - a thunk (no-argument function) that returns the paths using standard `node_modules` resolution
-    * opts - the resolution options
+A sustainability-focused web application that calculates environmental benefits such as carbon dioxide absorption, oxygen generation, and long-term environmental impact through tree plantation analytics.
 
-* opts.moduleDirectory - directory (or directories) in which to recursively look for modules. default: `"node_modules"`
+**Highlights**
 
-* opts.preserveSymlinks - if true, doesn't resolve `basedir` to real path before resolving.
-This is the way Node resolves dependencies when executed with the [--preserve-symlinks](https://nodejs.org/api/all.html#cli_preserve_symlinks) flag.
-**Note:** this property is currently `true` by default but it will be changed to
-`false` in the next major version because *Node's resolution algorithm does not preserve symlinks by default*.
+* Carbon Reduction Calculator
+* Environmental Dashboard
+* Sustainability Reports
+* Interactive Analytics
 
-default `opts` values:
+---
 
-```js
-{
-    paths: [],
-    basedir: __dirname,
-    extensions: ['.js'],
-    includeCoreModules: true,
-    readFile: fs.readFile,
-    isFile: function isFile(file, cb) {
-        fs.stat(file, function (err, stat) {
-            if (!err) {
-                return cb(null, stat.isFile() || stat.isFIFO());
-            }
-            if (err.code === 'ENOENT' || err.code === 'ENOTDIR') return cb(null, false);
-            return cb(err);
-        });
-    },
-    isDirectory: function isDirectory(dir, cb) {
-        fs.stat(dir, function (err, stat) {
-            if (!err) {
-                return cb(null, stat.isDirectory());
-            }
-            if (err.code === 'ENOENT' || err.code === 'ENOTDIR') return cb(null, false);
-            return cb(err);
-        });
-    },
-    realpath: function realpath(file, cb) {
-        var realpath = typeof fs.realpath.native === 'function' ? fs.realpath.native : fs.realpath;
-        realpath(file, function (realPathErr, realPath) {
-            if (realPathErr && realPathErr.code !== 'ENOENT') cb(realPathErr);
-            else cb(null, realPathErr ? file : realPath);
-        });
-    },
-    readPackage: function defaultReadPackage(readFile, pkgfile, cb) {
-        readFile(pkgfile, function (readFileErr, body) {
-            if (readFileErr) cb(readFileErr);
-            else {
-                try {
-                    var pkg = JSON.parse(body);
-                    cb(null, pkg);
-                } catch (jsonErr) {
-                    cb(null);
-                }
-            }
-        });
-    },
-    moduleDirectory: 'node_modules',
-    preserveSymlinks: true
-}
-```
+## 💼 Experience
 
-## resolve.sync(id, opts)
+### Internet of Things (IoT) Intern
 
-Synchronously resolve the module path string `id`, returning the result and
-throwing an error when `id` can't be resolved.
+**Emglitz Technologies**
 
-options are:
+* Embedded Systems
+* IoT Concepts
+* Hardware Integration
+* Sensor Applications
+* Team Collaboration
 
-* opts.basedir - directory to begin resolving from
+---
 
-* opts.extensions - array of file extensions to search in order
+### Cloud Computing Intern
 
-* opts.includeCoreModules - set to `false` to exclude node core modules (e.g. `fs`) from the search
+**LITZ Technologies**
 
-* opts.readFileSync - how to read files synchronously
+* Cloud Computing Fundamentals
+* Virtualization
+* Cloud Storage
+* Infrastructure Basics
+* Cloud Service Models
 
-* opts.isFile - function to synchronously test whether a file exists
+---
 
-* opts.isDirectory - function to synchronously test whether a file exists and is a directory
+## 🏆 Certifications
 
-* opts.realpathSync - function to synchronously resolve a potential symlink to its real path
+* AWS Cloud Practitioner Essentials
+* IBM AI Fundamentals
+* IBM Generative AI Essentials
+* IBM Enterprise Design Thinking Practitioner
 
-* `opts.readPackageSync(readFileSync, pkgfile)` - function to synchronously read and parse a package.json file
-  * readFileSync - the passed `opts.readFileSync` or `fs.readFileSync` if not specified
-  * pkgfile - path to package.json
+---
 
-* `opts.packageFilter(pkg, dir)` - transform the parsed package.json contents before looking at the "main" field
-  * pkg - package data
-  * dir - directory that contains package.json (Note: the second argument will change to "pkgfile" in v2)
+## 🎯 Career Objective
 
-* `opts.pathFilter(pkg, path, relativePath)` - transform a path within a package
-  * pkg - package data
-  * path - the path being resolved
-  * relativePath - the path relative from the package.json location
-  * returns - a relative path that will be joined from the package.json location
+I am passionate about solving real-world problems through software development and continuously improving my skills in Cloud Computing, Artificial Intelligence, and Full Stack Development.
 
-* opts.paths - require.paths array to use if nothing is found on the normal `node_modules` recursive walk (probably don't use this)
+My long-term goal is to become a **Cloud Engineer** or **Full Stack Developer**, building scalable, secure, and impactful applications that deliver real value.
 
-  For advanced users, `paths` can also be a `opts.paths(request, start, opts)` function
-    * request - the import specifier being resolved
-    * start - lookup path
-    * getNodeModulesDirs - a thunk (no-argument function) that returns the paths using standard `node_modules` resolution
-    * opts - the resolution options
+---
 
-* `opts.packageIterator(request, start, opts)` - return the list of candidate paths where the packages sources may be found (probably don't use this)
-    * request - the import specifier being resolved
-    * start - lookup path
-    * getPackageCandidates - a thunk (no-argument function) that returns the paths using standard `node_modules` resolution
-    * opts - the resolution options
+## 📸 Portfolio Preview
 
-* opts.moduleDirectory - directory (or directories) in which to recursively look for modules. default: `"node_modules"`
+Visit the live portfolio to explore:
 
-* opts.preserveSymlinks - if true, doesn't resolve `basedir` to real path before resolving.
-This is the way Node resolves dependencies when executed with the [--preserve-symlinks](https://nodejs.org/api/all.html#cli_preserve_symlinks) flag.
-**Note:** this property is currently `true` by default but it will be changed to
-`false` in the next major version because *Node's resolution algorithm does not preserve symlinks by default*.
+* Interactive UI
+* Modern Animations
+* Professional Design
+* Responsive Experience
 
-default `opts` values:
+🌐 **Live Demo:** https://hari-portfolio-9g4deopck-hari-prasath-r.vercel.app
 
-```js
-{
-    paths: [],
-    basedir: __dirname,
-    extensions: ['.js'],
-    includeCoreModules: true,
-    readFileSync: fs.readFileSync,
-    isFile: function isFile(file) {
-        try {
-            var stat = fs.statSync(file);
-        } catch (e) {
-            if (e && (e.code === 'ENOENT' || e.code === 'ENOTDIR')) return false;
-            throw e;
-        }
-        return stat.isFile() || stat.isFIFO();
-    },
-    isDirectory: function isDirectory(dir) {
-        try {
-            var stat = fs.statSync(dir);
-        } catch (e) {
-            if (e && (e.code === 'ENOENT' || e.code === 'ENOTDIR')) return false;
-            throw e;
-        }
-        return stat.isDirectory();
-    },
-    realpathSync: function realpathSync(file) {
-        try {
-            var realpath = typeof fs.realpathSync.native === 'function' ? fs.realpathSync.native : fs.realpathSync;
-            return realpath(file);
-        } catch (realPathErr) {
-            if (realPathErr.code !== 'ENOENT') {
-                throw realPathErr;
-            }
-        }
-        return file;
-    },
-    readPackageSync: function defaultReadPackageSync(readFileSync, pkgfile) {
-        var body = readFileSync(pkgfile);
-        try {
-            var pkg = JSON.parse(body);
-            return pkg;
-        } catch (jsonErr) {}
-    },
-    moduleDirectory: 'node_modules',
-    preserveSymlinks: true
-}
-```
+---
 
-# install
+## 📬 Contact
 
-With [npm](https://npmjs.org) do:
+**HARIPRASATH R**
 
-```sh
-npm install resolve
-```
+📧 Email: [hpaids86@gmail.com](mailto:hpaids86@gmail.com)
 
-# license
+📱 Phone: +91 9994263846
 
-MIT
+💼 LinkedIn: https://linkedin.com/in/YOUR-LINKEDIN
 
-[1]: https://npmjs.org/package/resolve
-[2]: https://versionbadg.es/browserify/resolve.svg
-[5]: https://david-dm.org/browserify/resolve.svg
-[6]: https://david-dm.org/browserify/resolve
-[7]: https://david-dm.org/browserify/resolve/dev-status.svg
-[8]: https://david-dm.org/browserify/resolve#info=devDependencies
-[11]: https://nodei.co/npm/resolve.png?downloads=true&stars=true
-[license-image]: https://img.shields.io/npm/l/resolve.svg
-[license-url]: LICENSE
-[downloads-image]: https://img.shields.io/npm/dm/resolve.svg
-[downloads-url]: https://npm-stat.com/charts.html?package=resolve
-[codecov-image]: https://codecov.io/gh/browserify/resolve/branch/main/graphs/badge.svg
-[codecov-url]: https://app.codecov.io/gh/browserify/resolve/
-[actions-image]: https://img.shields.io/github/check-runs/browserify/resolve/main
-[actions-url]: https://github.com/browserify/resolve/actions
+🐙 GitHub: https://github.com/YOUR-GITHUB
+
+🌐 Portfolio: https://hari-portfolio-9g4deopck-hari-prasath-r.vercel.app
+
+---
+
+## 🤝 Let's Connect
+
+I'm actively seeking opportunities in:
+
+* ☁️ Cloud Engineering
+* 💻 Full Stack Development
+* 🤖 Artificial Intelligence
+* 🚀 Software Engineering Internships
+* 🌍 Open Source Collaboration
+
+If you'd like to collaborate, discuss technology, or explore opportunities, feel free to connect!
+
+---
+
+## ⭐ Support
+
+If you enjoyed exploring my portfolio, consider giving this repository a **⭐ Star**. Your support motivates me to continue learning and building impactful projects.
+
+---
+
+## 📄 License
+
+This project is open source and available under the **MIT License**.
+
+---
+
+<div align="center">
+
+### Thank you for visiting my portfolio! 🚀
+
+**"Building scalable solutions, solving real-world problems, and continuously learning every day."**
+
+Made with ❤️ by **HARIPRASATH R**
+
+</div>

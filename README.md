@@ -1,40 +1,53 @@
-<p align="center">
-  <a href="https://tailwindcss.com" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
-      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
-    </picture>
-  </a>
-</p>
+# Autoprefixer [![Cult Of Martians][cult-img]][cult]
 
-<p align="center">
-  A utility-first CSS framework for rapidly building custom user interfaces.
-</p>
+<img align="right" width="94" height="71"
+     src="https://postcss.github.io/autoprefixer/logo.svg"
+     title="Autoprefixer logo by Anton Lovchikov">
 
-<p align="center">
-    <a href="https://github.com/tailwindlabs/tailwindcss/actions"><img src="https://img.shields.io/github/actions/workflow/status/tailwindlabs/tailwindcss/ci.yml?branch=main" alt="Build Status"></a>
-    <a href="https://www.npmjs.com/package/tailwindcss"><img src="https://img.shields.io/npm/dt/tailwindcss.svg" alt="Total Downloads"></a>
-    <a href="https://github.com/tailwindcss/tailwindcss/releases"><img src="https://img.shields.io/npm/v/tailwindcss.svg" alt="Latest Release"></a>
-    <a href="https://github.com/tailwindcss/tailwindcss/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/tailwindcss.svg" alt="License"></a>
-</p>
+[PostCSS] plugin to parse CSS and add vendor prefixes to CSS rules using values
+from [Can I Use]. It is recommended by Google and used in Twitter and Alibaba.
 
----
+Write your CSS rules without vendor prefixes (in fact, forget about them
+entirely):
 
-## Documentation
+```css
+::placeholder {
+  color: gray;
+}
 
-For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
+.image {
+  width: stretch;
+}
+```
 
-## Community
+Autoprefixer will use the data based on current browser popularity and property
+support to apply prefixes for you. You can try the [interactive demo]
+of Autoprefixer.
 
-For help, discussion about best practices, or any other conversation that would benefit from being searchable:
+```css
+::-moz-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
 
-[Discuss Tailwind CSS on GitHub](https://github.com/tailwindcss/tailwindcss/discussions)
+.image {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: stretch;
+}
+```
 
-For casual chit-chat with others using the framework:
+Twitter account for news and releases: [@autoprefixer].
 
-[Join the Tailwind CSS Discord Server](https://discord.gg/7NF8GNe)
+<a href="https://evilmartians.com/?utm_source=autoprefixer">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
+</a>
 
-## Contributing
-
-If you're interested in contributing to Tailwind CSS, please read our [contributing docs](https://github.com/tailwindcss/tailwindcss/blob/main/.github/CONTRIBUTING.md) **before submitting a pull request**.
+[interactive demo]: https://autoprefixer.github.io/
+[@autoprefixer]: https://twitter.com/autoprefixer
+[Can I Use]: https://caniuse.com/
+[cult-img]: https://cultofmartians.com/assets/badges/badge.svg
+[PostCSS]: https://github.com/postcss/postcss
+[cult]: https://cultofmartians.com/tasks/autoprefixer-grid.html

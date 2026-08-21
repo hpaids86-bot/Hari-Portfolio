@@ -163,9 +163,9 @@ Visit the live portfolio to explore:
 
 📱 Phone: +91 9994263846
 
-💼 LinkedIn: https://linkedin.com/in/YOUR-LINKEDIN
+💼 LinkedIn:(https://www.linkedin.com/in/hari-prasath-r-b8ab12369/)
 
-🐙 GitHub: https://github.com/YOUR-GITHUB
+🐙 GitHub: (https://github.com/hpaids86-bot/)
 
 🌐 Portfolio: https://hari-portfolio-9g4deopck-hari-prasath-r.vercel.app
 

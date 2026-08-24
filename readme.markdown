@@ -4,7 +4,7 @@
 
 Welcome to my personal portfolio website! This portfolio showcases my technical skills, projects, internships, certifications, achievements, and professional journey as I work toward becoming a Cloud Engineer and Full Stack Developer.
 
-🌐 **Live Portfolio:** https://6a60d09c9774a379219d915c--stunning-tiramisu-88dd9f.netlify.app/
+🌐 **Live Portfolio:** hariportfolio.pages.dev
 
 ---
 

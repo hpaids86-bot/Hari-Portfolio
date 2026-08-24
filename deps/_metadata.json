@@ -1,0 +1,61 @@
+{
+  "hash": "291ee31b",
+  "configHash": "924b10a9",
+  "lockfileHash": "44337f8b",
+  "browserHash": "f3462cf0",
+  "optimized": {
+    "react": {
+      "src": "../../react/index.js",
+      "file": "react.js",
+      "fileHash": "dd3060c1",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "d93c417c",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "924be103",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "a28d0ab3",
+      "needsInterop": true
+    },
+    "framer-motion": {
+      "src": "../../framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "15bab605",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "41259033",
+      "needsInterop": true
+    },
+    "react-intersection-observer": {
+      "src": "../../react-intersection-observer/dist/index.mjs",
+      "file": "react-intersection-observer.js",
+      "fileHash": "59e58b96",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PQUBWG3Q": {
+      "file": "chunk-PQUBWG3Q.js"
+    },
+    "chunk-YQTS7YKS": {
+      "file": "chunk-YQTS7YKS.js"
+    },
+    "chunk-6LGOJ2JQ": {
+      "file": "chunk-6LGOJ2JQ.js"
+    }
+  }
+}

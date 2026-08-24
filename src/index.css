@@ -45,7 +45,8 @@
 
   /* ── Luxury Scrollbar ── */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -53,7 +54,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #111111;
+    background: rgba(17, 17, 17, 0.2);
     border-radius: 8px;
     transition: background 0.3s ease;
   }

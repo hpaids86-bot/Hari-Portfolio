@@ -53,10 +53,20 @@ const ProfileInfoCard = () => {
 
       {/* Buttons */}
       <div className="flex gap-3 flex-wrap">
-        <a href="https://docs.google.com/document/d/1OUCUspzYImwSSSGVaEDxlNgVHAALeX0V/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center gap-2">
+        <a 
+          href="https://drive.google.com/file/d/18EKp5GWVu29Bok18o-2PKaKPifjSzpD_/view?usp=sharing" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn-primary flex items-center gap-2"
+        >
           <span>View Resume</span>
         </a>
-        <a href="https://docs.google.com/document/d/1OUCUspzYImwSSSGVaEDxlNgVHAALeX0V/export?format=pdf" download className="btn-secondary flex items-center gap-2">
+        <a 
+          href="https://drive.google.com/uc?export=download&id=18EKp5GWVu29Bok18o-2PKaKPifjSzpD_" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary flex items-center gap-2"
+        >
           <span>Download</span>
         </a>
       </div>

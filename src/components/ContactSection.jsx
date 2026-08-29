@@ -179,9 +179,14 @@ export default function ContactSection() {
     setCopyTimeoutId(tId);
   };
 
-  const handleResumeAction = () => {
+  const handleViewResume = () => {
     fireConfetti();
-    window.open('https://github.com/hpaids86-bot', '_blank');
+    window.open('https://drive.google.com/file/d/18EKp5GWVu29Bok18o-2PKaKPifjSzpD_/view?usp=sharing', '_blank');
+  };
+
+  const handleDownloadResume = () => {
+    fireConfetti();
+    window.open('https://drive.google.com/uc?export=download&id=18EKp5GWVu29Bok18o-2PKaKPifjSzpD_', '_blank');
   };
 
   const scrollToContactForm = () => {
@@ -530,13 +535,13 @@ export default function ContactSection() {
                 {/* View/Download Resume Actions */}
                 <div className="grid grid-cols-2 gap-3">
                   <button
-                    onClick={handleResumeAction}
+                    onClick={handleViewResume}
                     className="px-3 py-2 text-center rounded-lg border border-black/10 hover:border-black/20 text-xs font-semibold text-[#111111] bg-white/50 hover:bg-[#111111] hover:text-white transition-all duration-300 cursor-none"
                   >
                     📄 View Resume
                   </button>
                   <button
-                    onClick={handleResumeAction}
+                    onClick={handleDownloadResume}
                     className="px-3 py-2 text-center rounded-lg bg-[#111111] hover:bg-[#1F2937] text-xs font-semibold text-white transition-all duration-300 shadow-luxury cursor-none"
                   >
                     ⬇ Download

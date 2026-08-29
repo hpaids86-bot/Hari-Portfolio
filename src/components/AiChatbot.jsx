@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // --- HARIPRASATH RESUME KNOWLEDGE DATA ---
 const BOT_KNOWLEDGE = {
+  resume: "You can view Hariprasath's Resume directly here: https://drive.google.com/file/d/18EKp5GWVu29Bok18o-2PKaKPifjSzpD_/view?usp=sharing\n\nOr download it directly here: https://drive.google.com/uc?export=download&id=18EKp5GWVu29Bok18o-2PKaKPifjSzpD_",
   projects: "Hariprasath has built several high-yield projects. His flagship is **EduPath AI Analyzer**, an AI study analytics platform scanning past exams with NLP & TF-IDF to predict semester exam topics. He also built **Eco-Tree Impact Analyzer** (a sustainability web platform adopted by local NGOs to calculate CO2 offsets) and **AI Console Resume** (an interactive command-line portfolio assistant).",
   skills: "His engineering capabilities include:\n- **Programming**: Python, Java, JavaScript, TypeScript\n- **Frontend**: React, Tailwind CSS, Framer Motion, HTML5, CSS3\n- **Backend & Cloud**: FastAPI, REST APIs, PostgreSQL, MySQL, AWS (EC2, S3, RDS), Git, GitHub, Docker (Learning)\n- **Artificial Intelligence**: Machine Learning basics, Natural Language Processing (text clustering, sentence embeddings), Generative AI, and Prompt Engineering.",
   education: "He is pursuing a **B.Tech in Artificial Intelligence & Data Science** at **V.S.B College of Engineering Technical Campus** (expected graduation: 2027), currently maintaining a strong **CGPA of 7.58**.",
@@ -14,8 +15,8 @@ const BOT_KNOWLEDGE = {
 
 const PROMPT_CHIPS = [
   { label: '🚀 Top Projects', query: 'projects' },
+  { label: '📄 Resume', query: 'resume' },
   { label: '💻 Skills', query: 'skills' },
-  { label: '🎓 College', query: 'education' },
   { label: '🟢 Internship Status', query: 'availability' }
 ];
 
@@ -43,7 +44,9 @@ export default function AiChatbot() {
   const getBotResponse = (query) => {
     const q = query.toLowerCase();
     
-    if (q.includes('project') || q.includes('build') || q.includes('edupath') || q.includes('eco-tree') || q.includes('resume')) {
+    if (q.includes('resume') || q.includes('cv')) {
+      return BOT_KNOWLEDGE.resume;
+    } else if (q.includes('project') || q.includes('build') || q.includes('edupath') || q.includes('eco-tree')) {
       return BOT_KNOWLEDGE.projects;
     } else if (q.includes('skill') || q.includes('tech') || q.includes('stack') || q.includes('python') || q.includes('react') || q.includes('fastapi') || q.includes('aws') || q.includes('postgres') || q.includes('language')) {
       return BOT_KNOWLEDGE.skills;

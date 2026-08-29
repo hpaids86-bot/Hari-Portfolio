@@ -136,10 +136,11 @@ export default function HeroSection() {
                 </span>
               </button>
               <a
-                href="https://docs.google.com/document/d/1OUCUspzYImwSSSGVaEDxlNgVHAALeX0V/export?format=pdf"
+                href="https://drive.google.com/uc?export=download&id=18EKp5GWVu29Bok18o-2PKaKPifjSzpD_"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary inline-block"
                 id="btn-download-resume"
-                download
               >
                 <span className="flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
